@@ -18,7 +18,7 @@ import static specs.DeleteAllBooksSpec.deleteAllBooksRequestSpec;
 import static specs.DeleteAllBooksSpec.deleteAllBooksResponseSpec204;
 
 @Tag("regression")
-@Tag("smoke")
+
 public class AddedBookTest extends TestBase {
     private final Response authResponse = new AuthorizationByAPI().getAuthorizationResponse();
 
@@ -44,6 +44,7 @@ public class AddedBookTest extends TestBase {
     @Test
     @WithLogin
     @DisplayName("Проверить, что при вводе неправильного ISBN появляется ошибка")
+    @Tag("smoke")
     void negative400AddBookToCollectionTest() {
 
         step("Удалить все книги", () -> given(deleteAllBooksRequestSpec)

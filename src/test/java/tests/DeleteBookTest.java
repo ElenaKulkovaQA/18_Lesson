@@ -16,7 +16,7 @@ import static org.hamcrest.Matchers.is;
 import static specs.DeleteAllBooksSpec.*;
 
 @Tag("regression")
-@Tag("smoke")
+
 public class DeleteBookTest extends TestBase {
     private final Response authResponse = new AuthorizationByAPI().getAuthorizationResponse();
 
@@ -24,6 +24,7 @@ public class DeleteBookTest extends TestBase {
     @Test
     @WithLogin
     @DisplayName("Проверка успешного удаления книг")
+    @Tag("smoke")
     void successfulDeleteBookTest() {
 
         step("Удалить все книги", () -> given(deleteAllBooksRequestSpec)
@@ -39,6 +40,7 @@ public class DeleteBookTest extends TestBase {
     @Test
     @WithLogin
     @DisplayName("Проверить, что невозможно удалить книги неавторизированному пользователю. Сообщение \"User not authorized!\"")
+    @Tag("smoke")
     void negative401DeleteBookNotAuthTest() {
 
         step("Удалить все книги", () -> given(deleteAllBooksRequestSpec)
