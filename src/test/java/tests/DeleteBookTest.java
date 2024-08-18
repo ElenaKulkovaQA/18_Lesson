@@ -15,7 +15,6 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 import static specs.DeleteAllBooksSpec.*;
 
-@Tag("regression")
 
 public class DeleteBookTest extends TestBase {
     private final Response authResponse = new AuthorizationByAPI().getAuthorizationResponse();
@@ -57,6 +56,7 @@ public class DeleteBookTest extends TestBase {
     @Test
     @WithLogin
     @DisplayName("Проверить, что невозможно удалить книги c неверным isbn")
+    @Tag("regression")
     void negative400DeleteBookTest() {
         String isbn = "G";
         List<String> books = List.of(isbn);
