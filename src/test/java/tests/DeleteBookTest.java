@@ -58,9 +58,14 @@ public class DeleteBookTest extends TestBase {
     @DisplayName("Проверить, что невозможно удалить книги c неверным isbn")
     @Tag("regression")
     void negative400DeleteBookTest() {
-        String isbn = "G";
-        List<String> books = List.of(isbn);
-        BookDataModel bookData = new BookDataModel(authResponse.path("userId"), books);
+
+        String isbn = "9781449325862";
+
+        List<BookDataModel.IsbnData> books = List.of(new BookDataModel.IsbnData("NULL"));
+
+        BookDataModel bookData = new BookDataModel(authResponse.path("userId"),books);
+
+
         step("Удалить все книги", () -> given(deleteAllBooksRequestSpec)
                 .header("Authorization", "Bearer " + authResponse.path("token"))
                 .queryParams("UserId", authResponse.path("userId"))

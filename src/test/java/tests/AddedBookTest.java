@@ -30,8 +30,11 @@ public class AddedBookTest extends TestBase {
     void successfulAddedBookTest() {
 
         String isbn = "9781449325862";
-        List<String> books = List.of(isbn);
-        BookDataModel bookData = new BookDataModel(authResponse.path("userId"), books);
+
+        List<BookDataModel.IsbnData> books = List.of(new BookDataModel.IsbnData("9781449325862"));
+
+        BookDataModel bookData = new BookDataModel(authResponse.path("userId"),books);
+
         step("Добавить книги в профиль. Успех 201", () -> given(addBookRequestSpec)
                 .header("Authorization", "Bearer " + authResponse.path("token"))
                 .body(bookData)
@@ -56,9 +59,11 @@ public class AddedBookTest extends TestBase {
                 .then()
                 .spec(deleteAllBooksResponseSpec204));
 
-        String isbn = "9781593275846";
-        List<String> books = List.of(isbn);
-        BookDataModel bookData = new BookDataModel(authResponse.path("userId"), books);
+        String isbn = "NULL";
+
+        List<BookDataModel.IsbnData> books = List.of(new BookDataModel.IsbnData("NULL"));
+
+        BookDataModel bookData = new BookDataModel(authResponse.path("userId"),books);
 
         step("Добавить книги в профиль при неверно заполненном isbn. Ошибка 400", () -> given(addBookRequestSpec)
                 .header("Authorization", "Bearer " + authResponse.path("token"))
