@@ -18,7 +18,7 @@ import static specs.DeleteAllBooksSpec.deleteAllBooksRequestSpec;
 import static specs.DeleteAllBooksSpec.deleteAllBooksResponseSpec204;
 
 
-
+@Tag("regression")
 public class AddedBookTest extends TestBase {
     private final Response authResponse = new AuthorizationByAPI().getAuthorizationResponse();
 
@@ -26,7 +26,7 @@ public class AddedBookTest extends TestBase {
     @Test
     @WithLogin
     @DisplayName("Проверить успешное добавление книг")
-    @Tag("regression")
+
     void successfulAddedBookTest() {
 
         String isbn = "9781449325862";
