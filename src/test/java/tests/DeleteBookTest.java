@@ -59,9 +59,9 @@ public class DeleteBookTest extends TestBase {
     @Tag("regression")
     void negative400DeleteBookTest() {
 
-        String isbn = "9781449325862";
+        String isbn = "9898";
 
-        List<BookDataModel.IsbnData> books = List.of(new BookDataModel.IsbnData("NULL"));
+        List<BookDataModel.IsbnData> books = List.of(new BookDataModel.IsbnData("9781449325862"));
 
         BookDataModel bookData = new BookDataModel(authResponse.path("userId"),books);
 
