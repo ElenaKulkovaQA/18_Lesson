@@ -26,8 +26,8 @@ public class DeleteAllBooksSpec {
             .expectStatusCode(401)
             .log(STATUS)
             .build();
-    public static ResponseSpecification deleteAllBooksNotBookResponseSpec400 = new ResponseSpecBuilder()
-            .expectStatusCode(400)
-            .log(STATUS)
-            .build();
+//    public static ResponseSpecification deleteAllBooksNotBookResponseSpec400 = new ResponseSpecBuilder()
+//            .expectStatusCode(400)
+//            .log(STATUS)
+//            .build();
 }
