@@ -1,4 +1,4 @@
-package authorisation;
+package api.methods;
 
 import io.restassured.response.Response;
 import models.AuthModel;

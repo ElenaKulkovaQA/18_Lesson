@@ -1,6 +1,6 @@
 package helpers;
 
-import authorisation.AuthorizationByAPI;
+import api.methods.AuthorizationByAPI;
 import com.codeborne.selenide.Condition;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.extension.BeforeEachCallback;

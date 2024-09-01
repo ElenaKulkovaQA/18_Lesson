@@ -4,17 +4,20 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hamcrest.core.Is;
 
 import java.util.List;
 
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Builder
-public class BookDataModel {
+
+public class ResponceBookModel {
     private String userId;
-    private List<IsbnData> collectionOfIsbns;
+    private String code;
+    private String message;
+    private List<ResponceBookModel.IsbnData> books;
+
 
     @Data
     @AllArgsConstructor
@@ -23,3 +26,4 @@ public class BookDataModel {
         String isbn;
     }
 }
+
